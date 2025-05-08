@@ -8,7 +8,7 @@ permissions:
   id-token: write
 
 env:
-  REPO_NAME: caupain
+  REPO_NAME: deezer 
   CODENAME: stable
   COMPONENTS: main
   ARCHITECTURES: amd64
