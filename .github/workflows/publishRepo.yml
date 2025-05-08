@@ -30,7 +30,7 @@ jobs:
         id: create-apt-repo
         with:
           repo-name: ${{ env.REPO_NAME }}
-          signing-key: ${{ secrets.SIGNING_KEY }}
+          signing-key: ${{ secrets.GPG_PRIVATE_KEY }}
           codename: ${{ env.CODENAME }}
           components: ${{ env.COMPONENTS }}
           architectures: ${{ env.ARCHITECTURES }}
