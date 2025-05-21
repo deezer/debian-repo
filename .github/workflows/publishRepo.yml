@@ -34,6 +34,13 @@ jobs:
           codename: ${{ env.CODENAME }}
           components: ${{ env.COMPONENTS }}
           architectures: ${{ env.ARCHITECTURES }}
+      - name: Install XML converter
+        run: sudo apt install -y dctrl2xml
+      - name: Convert Packages file to XML
+        run: |
+          cd ${{ steps.create-apt-repo.outputs.dir }}/${{ env.CODENAME }}/${{ env.COMPONENTS }}/binary-${{ env.ARCHITECTURES }}
+          dctrl2xml -f Packages -j > Packages.json
+          cd -
       - name: Upload Pages artifact
         id: upload-artifact
         uses: actions/upload-pages-artifact@v3
