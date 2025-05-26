@@ -24,8 +24,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Get last DEB package
-        run: wget https://github.com/deezer/caupain/releases/download/v1.1.1/caupain_1.1.1-1_amd64.deb
+      - name: Get last DEB packages
+        run: ./download_debs.main.kts
       - uses: morph027/apt-repo-action@v3.6
         id: create-apt-repo
         with:
